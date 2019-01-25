@@ -1,32 +1,19 @@
 <div *ngIf="products.length > 0; else noproducts">
-  <ul *ngFor="let p of products">
-    <li>
-      {{ p.name }} <br/>
-      {{p.description}} <br/>
-      {{p.price}} <br/>
-      <button (click)="deleteProduct($event, p)">
-        Delete
-      </button>
-
-      <button (click)="editProduct($event, p)">
-       Edit 
-      </button>
-      <div *ngIf="editing && editingProduct.id == p.id">
-        <form (ngSubmit)="updateProduct(product)">
-          <input type="text" name="name" [(ngModel)]="editingProduct.name">
-          <input type="text" name="description" [(ngModel)]="editingProduct.description">
-          <input type="text" name="price" [(ngModel)]="editingProduct.price">
-          <button type="submit">
-            Update
-          </button>
-        </form>
-      </div>
-    </li>
-  </ul>
+  <div class="container-fluid">
+    <div class="row d-flex justify-content-start">
+      <div *ngFor="let p of products" class="col-md-3 producto d-flex justify-content-center borde {{ p.web }} fondo hovere"><a href="{{ p.url }}" target="_blank">
+        <p class="texto text-center">{{ p.name }} <br/></p>
+        <img src="{{ p.description }}" alt="" height="150" width="150" class="mx-auto d-block">
+        <p class="texto text-center mt-4">{{ p.moneda }}{{ p.price }} <del>{{ p.priceold }}</del></p>
+        <p *ngIf="p.descuento && p.descuento < 49;" class="texto text-center mt-1 descuento" id="descuento">-{{ p.descuento }}%</p>
+        <p *ngIf="p.descuento && p.descuento > 49;" class="texto text-center mt-1 descuento2" id="descuento">-{{ p.descuento }}%</p>
+      </a></div>
+    </div>
+  </div>
 </div>
 
 <ng-template #noproducts>
-  <p>
-    There are no products yet.
+  <p class="d-flex justify-content-center mt-4">
+    No se ha podido conectar con el servidor. Comprueba tu conexion a internet!
   </p>
 </ng-template>

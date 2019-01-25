@@ -1,0 +1,40 @@
+.texto {
+    font-family: 'Raleway', sans-serif;
+    text-decoration:none;
+    color: black;
+}
+.producto {
+    padding-top: 50px;
+    padding-bottom: 25px;
+}
+
+.borde {
+    border: 1px;
+    border-style: outset;
+    border-color: #424078;
+    border-radius: 2px;
+}
+
+.margen {
+    margin: 1.5%;
+}
+
+.fondo {
+    background-color: white;
+}
+
+.descuento {
+    background-color: yellowgreen;
+    border: 2px;
+    border-style: dotted;
+    border-color: green;
+    border-radius: 2px;
+}
+
+.descuento2 {
+    background-color: red;
+    border: 2px;
+    border-style: dotted;
+    border-color: green;
+    border-radius: 2px;
+}

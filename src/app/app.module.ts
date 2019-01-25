@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
+import { RouterModule, Routes } from '@angular/router';
 
 // FIRESTORE
 import { AngularFireModule } from '@angular/fire';
@@ -12,18 +13,29 @@ import { ProductsComponent } from './components/products/products.component';
 
 // Service
 import { ProductService } from './services/product.service';
-import { ProductFormComponent } from './components/product-form/product-form.component';
+import { HomeComponent } from './teamples/home/home.component';
+import { AngularFireAuthModule } from '@angular/fire/auth';
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: '**', component: HomeComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
-    ProductFormComponent
+    HomeComponent
   ],
   imports: [
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: false } // <-- debugging purposes only
+    ),
     BrowserModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAuthModule,
     FormsModule
   ],
   providers: [

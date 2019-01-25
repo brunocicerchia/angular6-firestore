@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angualar6-firestore": {
+    "ofertones": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angualar6-firestore",
+            "outputPath": "dist/ofertones",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -50,18 +50,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angualar6-firestore:build"
+            "browserTarget": "ofertones:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angualar6-firestore:build:production"
+              "browserTarget": "ofertones:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angualar6-firestore:build"
+            "browserTarget": "ofertones:build"
           }
         },
         "test": {
@@ -95,7 +95,7 @@
         }
       }
     },
-    "angualar6-firestore-e2e": {
+    "ofertones-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "targets": {
@@ -103,11 +103,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "angualar6-firestore:serve"
+            "devServerTarget": "ofertones:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "angualar6-firestore:serve:production"
+              "devServerTarget": "ofertones:serve:production"
             }
           }
         },
@@ -123,5 +123,5 @@
       }
     }
   },
-  "defaultProject": "angualar6-firestore"
+  "defaultProject": "ofertones"
 }

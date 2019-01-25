@@ -1,4 +1,9 @@
 export interface Product {
+  descuento?: number;
+  priceold?: number;
+  moneda?: string;
+  url?: string;
+  web?: string;
   id?: string;
   name?: string;
   description?: string;
